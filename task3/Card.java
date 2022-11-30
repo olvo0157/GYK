@@ -1,6 +1,6 @@
 package com.gyk.java.oop.basics.task3;
 
-public abstract class Card extends Exception {
+public abstract class Card {
     private String cardHolder;
     private String cardNumber;
     private double balance;

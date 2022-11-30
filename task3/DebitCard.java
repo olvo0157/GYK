@@ -10,7 +10,7 @@ public class DebitCard extends Card {
 
     @Override
     void checkForSufficientFunds(double amount) throws NotEnoughBalanceException {
-        if (getBalance() - amount < 0) {
+        if (amount > getBalance()) {
             throw new NotEnoughBalanceException("Insufficient funds! Max available amount is: " + getBalance());
         }
     }

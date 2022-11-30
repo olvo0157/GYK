@@ -12,8 +12,8 @@ public class CreditCard extends Card {
 
     @Override
     void checkForSufficientFunds(double amount) throws NotEnoughCreditException {
-        if (getBalance() + credit - amount * (1 + interest / 100) < 0) {
-            throw new NotEnoughCreditException("Insufficient funds! Max available amount is: " + (getBalance() + credit) * (1 - interest / 100));
+        if (amount > getMaxAvailableAmount()) {
+            throw new NotEnoughCreditException("Insufficient funds! Max available amount is: " + getMaxAvailableAmount());
         }
     }
 
@@ -32,5 +32,10 @@ public class CreditCard extends Card {
                 ", interest=" + interest +
                 ", credit=" + credit +
                 "} ";
+    }
+
+    private double getMaxAvailableAmount() {
+        return Math.floor((getBalance() + credit) / (1 + interest / 100));
+
     }
 }

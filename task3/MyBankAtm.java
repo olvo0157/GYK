@@ -26,11 +26,11 @@ public class MyBankAtm implements Atm {
             card.debit(amount);
             balance -= amount;
         } catch (InsufficientAtmFundsException exc) {
-            exc.printStackTrace(new java.io.PrintStream(System.out));
+            System.out.println(exc);
         } catch (NotEnoughBalanceException exc) {
-            exc.printStackTrace(new java.io.PrintStream(System.out));
+            System.out.println(exc);
         } catch (NotEnoughCreditException exc) {
-            exc.printStackTrace(new java.io.PrintStream(System.out));
+            System.out.println(exc);
         }
 
     }
