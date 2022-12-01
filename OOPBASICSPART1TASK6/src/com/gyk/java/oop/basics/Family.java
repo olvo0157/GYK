@@ -7,9 +7,6 @@ public class Family {
     private Vehicle vehicle;
     private TravelDestination travelDestination;
 
-    public Family() {
-    }
-
     public Family(Person[] persons, Vehicle vehicle, TravelDestination travelDestination) {
         this.persons = persons;
         this.vehicle = vehicle;

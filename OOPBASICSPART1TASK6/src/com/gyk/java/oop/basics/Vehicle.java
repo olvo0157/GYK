@@ -6,9 +6,6 @@ public class Vehicle {
     private double fuel;
     private double consumption;
 
-    public Vehicle() {
-    }
-
     public Vehicle(String name, String brand, double fuel, double consumption) {
         this.name = name;
         this.brand = brand;

@@ -1,25 +1,12 @@
 package com.gyk.java.oop.basics;
 
+import java.util.Objects;
+
 public class TravelDestination {
     private String name;
     private String city;
     private int distance;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TravelDestination that = (TravelDestination) o;
-        return distance == that.distance && name.equals(that.name) && city.equals(that.city);
-    }
-
-    @Override
-    public int hashCode() {
-        return 0;
-    }
-
-    public TravelDestination() {
-    }
 
     public TravelDestination(String name, String city, int distance) {
         this.name = name;
@@ -49,5 +36,18 @@ public class TravelDestination {
 
     public void setDistance(int distance) {
         this.distance = distance;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TravelDestination)) return false;
+        TravelDestination that = (TravelDestination) o;
+        return getDistance() == that.getDistance() && getName().equals(that.getName()) && getCity().equals(that.getCity());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getCity(), getDistance());
     }
 }

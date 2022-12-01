@@ -1,17 +1,12 @@
 package com.gyk.java.oop.basics;
 
-enum GENDER {MALE, FEMALE};
-
 public class Person {
     private String name;
     private String surname;
-    private GENDER gender;
+    private Gender gender;
     private int age;
 
-    public Person() {
-    }
-
-    public Person(String name, String surname, GENDER gender, int age) {
+    public Person(String name, String surname, Gender gender, int age) {
         this.name = name;
         this.surname = surname;
         this.gender = gender;
@@ -34,11 +29,11 @@ public class Person {
         this.surname = surname;
     }
 
-    public GENDER getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(GENDER gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
